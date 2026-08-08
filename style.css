@@ -1,0 +1,1050 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Parisienne&display=swap');
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+    --soft-pink: #f8e8ee;
+    --pink: #f3d1dc;
+    --dusty-pink: #e8afc0;
+    --rose: #c9829a;
+    --deep-rose: #a95f78;
+
+    --cream: #fff9fb;
+    --white: #ffffff;
+
+    --text: #4a3540;
+    --soft-text: #806572;
+
+    --shadow: rgba(169, 95, 120, 0.15);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--soft-pink);
+    color: var(--text);
+
+    font-family: 'DM Sans', sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+button {
+    font-family: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.screen,
+.content-section {
+    min-height: 100vh;
+    width: 100%;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 70px 20px;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.screen::before,
+.content-section::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,255,255,0.65),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(232,175,192,0.3),
+            transparent 30%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   DECORATIONS
+========================================================= */
+
+.background-decoration {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.flower,
+.sparkle {
+    position: absolute;
+
+    color: rgba(201, 130, 154, 0.28);
+
+    animation: floatDecoration 5s ease-in-out infinite;
+}
+
+.flower {
+    font-size: 28px;
+}
+
+.sparkle {
+    font-size: 20px;
+}
+
+.flower-1 {
+    top: 10%;
+    left: 8%;
+}
+
+.flower-2 {
+    top: 70%;
+    right: 8%;
+
+    animation-delay: 1s;
+}
+
+.flower-3 {
+    top: 45%;
+    left: 4%;
+
+    font-size: 18px;
+    animation-delay: 2s;
+}
+
+.flower-4 {
+    bottom: 8%;
+    right: 25%;
+
+    font-size: 20px;
+    animation-delay: 3s;
+}
+
+.sparkle-1 {
+    top: 18%;
+    right: 15%;
+}
+
+.sparkle-2 {
+    top: 60%;
+    left: 15%;
+
+    animation-delay: 1.5s;
+}
+
+.sparkle-3 {
+    bottom: 15%;
+    left: 30%;
+
+    animation-delay: 2.5s;
+}
+
+.sparkle-4 {
+    top: 35%;
+    right: 5%;
+
+    animation-delay: 3.5s;
+}
+
+
+@keyframes floatDecoration {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(8deg);
+    }
+}
+
+
+/* =========================================================
+   MUSIC BUTTON
+========================================================= */
+
+.music-button {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 249, 251, 0.9);
+
+    color: var(--rose);
+
+    font-size: 22px;
+
+    box-shadow:
+        0 8px 25px var(--shadow);
+
+    backdrop-filter: blur(10px);
+
+    z-index: 100;
+
+    transition: 0.3s ease;
+}
+
+.music-button:hover {
+    transform: scale(1.08);
+}
+
+.music-button.playing {
+    animation: musicPulse 1.5s infinite;
+}
+
+@keyframes musicPulse {
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(201,130,154,0.3);
+    }
+
+    70% {
+        box-shadow: 0 0 0 12px rgba(201,130,154,0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(201,130,154,0);
+    }
+}
+
+
+/* =========================================================
+   OPENING
+========================================================= */
+
+#opening {
+    background:
+        linear-gradient(
+            135deg,
+            #f9eaf0,
+            #f5dce5
+        );
+}
+
+.opening-content {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    max-width: 600px;
+
+    animation: fadeUp 1.2s ease;
+}
+
+.small-title {
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: var(--rose);
+
+    margin-bottom: 20px;
+}
+
+.opening-content h1 {
+    font-family: 'Parisienne', cursive;
+
+    font-size: clamp(70px, 13vw, 130px);
+
+    font-weight: 400;
+
+    line-height: 0.9;
+
+    color: var(--deep-rose);
+
+    margin-bottom: 30px;
+}
+
+.opening-content h1 span {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 45px;
+
+    vertical-align: top;
+
+    color: var(--rose);
+}
+
+.opening-description {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 21px;
+
+    line-height: 1.7;
+
+    color: var(--soft-text);
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.main-button {
+    padding: 14px 30px;
+
+    border-radius: 50px;
+
+    background: var(--rose);
+
+    color: white;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 10px 25px rgba(169,95,120,0.2);
+
+    transition: 0.3s ease;
+}
+
+.main-button:hover {
+    background: var(--deep-rose);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 30px rgba(169,95,120,0.25);
+}
+
+.outline-button {
+    padding: 13px 27px;
+
+    border-radius: 50px;
+
+    background: transparent;
+
+    color: var(--deep-rose);
+
+    border: 1px solid var(--rose);
+
+    font-size: 13px;
+
+    transition: 0.3s ease;
+}
+
+.outline-button:hover {
+    background: var(--rose);
+
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   CODE SECTION
+========================================================= */
+
+#codeSection {
+    display: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7e3ea,
+            #fbeff3
+        );
+}
+
+.code-container {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(400px, 90%);
+
+    text-align: center;
+
+    animation: fadeUp 0.8s ease;
+}
+
+.code-container h2 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 48px;
+
+    font-weight: 600;
+
+    color: var(--deep-rose);
+
+    margin-bottom: 12px;
+}
+
+.code-description {
+    color: var(--soft-text);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   CODE DOTS
+========================================================= */
+
+.code-display {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-bottom: 28px;
+}
+
+.code-dot {
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+
+    background: #ead0d9;
+
+    transition: 0.25s ease;
+}
+
+.code-dot.filled {
+    background: var(--rose);
+
+    transform: scale(1.15);
+}
+
+
+/* =========================================================
+   NUMBER PAD
+========================================================= */
+
+.number-pad {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 65px);
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+}
+
+.number-button {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.7);
+
+    color: var(--text);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 23px;
+
+    box-shadow:
+        0 5px 15px rgba(169,95,120,0.08);
+
+    transition: 0.2s ease;
+}
+
+.number-button:hover {
+    background: white;
+
+    transform: scale(1.05);
+}
+
+.number-button:active {
+    transform: scale(0.94);
+}
+
+.empty-button {
+    visibility: hidden;
+}
+
+.delete-button {
+    color: var(--rose);
+}
+
+.hint {
+    font-size: 11px;
+
+    color: #9b7d89;
+
+    letter-spacing: 1px;
+}
+
+.wrong-code {
+    margin-top: 12px;
+
+    font-size: 12px;
+
+    color: var(--deep-rose);
+
+    opacity: 0;
+
+    transition: 0.3s ease;
+}
+
+.wrong-code.show {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   BIRTHDAY REVEAL
+========================================================= */
+
+#birthdaySection {
+    display: none;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff8fa 0%,
+            #f6dce5 100%
+        );
+}
+
+.birthday-container {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    animation: birthdayReveal 1.2s ease;
+}
+
+.birthday-flower {
+    font-size: 45px;
+
+    color: var(--rose);
+
+    margin-bottom: 20px;
+
+    animation: flowerSpin 5s linear infinite;
+}
+
+.birthday-title {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(65px, 12vw, 110px);
+
+    line-height: 0.82;
+
+    font-weight: 600;
+
+    color: var(--deep-rose);
+
+    margin: 15px 0 25px;
+}
+
+.birthday-name {
+    font-family: 'Parisienne', cursive;
+
+    font-size: 32px;
+
+    color: var(--rose);
+
+    margin-bottom: 12px;
+}
+
+.birthday-message {
+    color: var(--soft-text);
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+#letterSection {
+    background: #fff7f9;
+
+    text-align: center;
+}
+
+.section-inner {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(800px, 100%);
+}
+
+.section-label {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: var(--rose);
+
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(48px, 8vw, 75px);
+
+    color: var(--deep-rose);
+
+    margin-bottom: 30px;
+}
+
+.letter-card {
+    width: min(650px, 100%);
+
+    margin: auto;
+
+    padding: 40px;
+
+    background:
+        rgba(255,255,255,0.85);
+
+    border: 1px solid rgba(201,130,154,0.15);
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 20px 50px rgba(169,95,120,0.08);
+
+    text-align: left;
+
+    position: relative;
+}
+
+.letter-card::before {
+    content: "♡";
+
+    position: absolute;
+
+    top: 18px;
+    right: 22px;
+
+    color: var(--pink);
+
+    font-size: 25px;
+}
+
+.letter-card p {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    color: var(--soft-text);
+
+    margin-bottom: 20px;
+}
+
+.letter-card p:first-child {
+    color: var(--deep-rose);
+
+    font-weight: 600;
+
+    font-size: 24px;
+}
+
+.letter-signature {
+    margin-top: 30px;
+
+    text-align: right;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 18px;
+
+    color: var(--soft-text);
+}
+
+.letter-signature span {
+    font-family: 'Parisienne', cursive;
+
+    font-size: 36px;
+
+    color: var(--deep-rose);
+}
+
+#memoriesButton {
+    margin-top: 35px;
+}
+
+
+/* =========================================================
+   MEMORIES
+========================================================= */
+
+#memoriesSection {
+    background:
+        linear-gradient(
+            180deg,
+            #f9e8ee,
+            #fff8fa
+        );
+
+    text-align: center;
+}
+
+.section-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 20px;
+
+    line-height: 1.5;
+
+    color: var(--soft-text);
+
+    margin-top: -15px;
+
+    margin-bottom: 50px;
+}
+
+
+/* =========================================================
+   PHOTO CARDS
+========================================================= */
+
+.photo-card {
+    width: min(330px, 90%);
+
+    margin: 0 auto 50px;
+
+    padding: 14px;
+
+    background: white;
+
+    box-shadow:
+        0 15px 40px rgba(169,95,120,0.12);
+
+    transition: 0.5s ease;
+}
+
+.photo-card:hover {
+    transform:
+        translateY(-8px)
+        rotate(0deg) !important;
+}
+
+.photo-one {
+    transform: rotate(-3deg);
+}
+
+.photo-two {
+    transform: rotate(3deg);
+}
+
+.photo-three {
+    transform: rotate(-2deg);
+}
+
+.photo-frame {
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    overflow: hidden;
+
+    background: var(--pink);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.6s ease;
+}
+
+.photo-card:hover img {
+    transform: scale(1.04);
+}
+
+.photo-caption {
+    padding: 17px 5px 7px;
+
+    font-family: 'Parisienne', cursive;
+
+    font-size: 22px;
+
+    color: var(--deep-rose);
+}
+
+
+/* =========================================================
+   MEMORY ENDING
+========================================================= */
+
+.memory-ending {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 20px;
+
+    color: var(--rose);
+}
+
+.memory-ending p {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 20px;
+
+    line-height: 1.3;
+
+    color: var(--soft-text);
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+#finalSection {
+    background:
+        radial-gradient(
+            circle at center,
+            #fffafd,
+            #f3d4df
+        );
+
+    text-align: center;
+}
+
+.final-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 600px;
+}
+
+.final-flower {
+    color: var(--rose);
+
+    font-size: 50px;
+
+    margin-bottom: 20px;
+}
+
+.final-content h2 {
+    font-family: 'Parisienne', cursive;
+
+    font-size: clamp(55px, 10vw, 90px);
+
+    font-weight: 400;
+
+    color: var(--deep-rose);
+
+    margin-bottom: 20px;
+}
+
+.final-message {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 21px;
+
+    line-height: 1.7;
+
+    color: var(--soft-text);
+
+    max-width: 450px;
+
+    margin: auto;
+}
+
+.final-heart {
+    font-size: 40px;
+
+    color: var(--rose);
+
+    margin: 35px 0;
+}
+
+.final-signature {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #997582;
+}
+
+.final-signature span {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    font-family: 'Parisienne', cursive;
+
+    font-size: 30px;
+
+    text-transform: none;
+
+    letter-spacing: 0;
+
+    color: var(--deep-rose);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes birthdayReveal {
+
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes flowerSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .screen,
+    .content-section {
+        padding: 55px 18px;
+    }
+
+    .opening-content h1 {
+        font-size: 82px;
+    }
+
+    .code-container h2 {
+        font-size: 42px;
+    }
+
+    .number-pad {
+        gap: 10px;
+    }
+
+    .number-button {
+        width: 60px;
+        height: 60px;
+    }
+
+    .letter-card {
+        padding: 28px 22px;
+    }
+
+    .letter-card p {
+        font-size: 18px;
+    }
+
+    .photo-card {
+        width: min(300px, 90%);
+    }
+
+    .music-button {
+        right: 16px;
+        bottom: 16px;
+
+        width: 44px;
+        height: 44px;
+    }
+}

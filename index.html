@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For You ♡</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         MUSIC
+    ====================================================== -->
+
+    <audio id="backgroundMusic" loop preload="auto">
+        <source src="music/lagu.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="musicButton" class="music-button" aria-label="Music">
+        ♫
+    </button>
+
+
+    <!-- =====================================================
+         BACKGROUND DECORATION
+    ====================================================== -->
+
+    <div class="background-decoration">
+        <span class="flower flower-1">✿</span>
+        <span class="flower flower-2">✿</span>
+        <span class="flower flower-3">✿</span>
+        <span class="flower flower-4">✿</span>
+
+        <span class="sparkle sparkle-1">✦</span>
+        <span class="sparkle sparkle-2">✧</span>
+        <span class="sparkle sparkle-3">✦</span>
+        <span class="sparkle sparkle-4">✧</span>
+    </div>
+
+
+
+    <!-- =====================================================
+         1. OPENING
+    ====================================================== -->
+
+    <main id="opening" class="screen active">
+
+        <div class="opening-content">
+
+            <p class="small-title">
+                a little something
+            </p>
+
+            <h1>
+                For You
+                <span>♡</span>
+            </h1>
+
+            <p class="opening-description">
+                I made something special<br>
+                just for you.
+            </p>
+
+            <button id="startButton" class="main-button">
+                open this ♡
+            </button>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         2. SECRET CODE
+    ====================================================== -->
+
+    <section id="codeSection" class="screen">
+
+        <div class="code-container">
+
+            <p class="small-title">
+                before we continue...
+            </p>
+
+            <h2>
+                A Little Secret
+            </h2>
+
+            <p class="code-description">
+                Enter the secret code<br>
+                to unlock your surprise.
+            </p>
+
+
+            <!-- Code Display -->
+
+            <div id="codeDisplay" class="code-display">
+
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+
+            </div>
+
+
+            <!-- Number Pad -->
+
+            <div class="number-pad">
+
+                <button class="number-button" data-number="1">1</button>
+                <button class="number-button" data-number="2">2</button>
+                <button class="number-button" data-number="3">3</button>
+
+                <button class="number-button" data-number="4">4</button>
+                <button class="number-button" data-number="5">5</button>
+                <button class="number-button" data-number="6">6</button>
+
+                <button class="number-button" data-number="7">7</button>
+                <button class="number-button" data-number="8">8</button>
+                <button class="number-button" data-number="9">9</button>
+
+                <button class="number-button empty-button"></button>
+                <button class="number-button" data-number="0">0</button>
+                <button id="deleteNumber" class="number-button delete-button">
+                    ←
+                </button>
+
+            </div>
+
+
+            <p class="hint">
+                hint: it's a special date ♡
+            </p>
+
+            <p id="wrongCode" class="wrong-code">
+                hmm... that's not it ♡
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         3. BIRTHDAY REVEAL
+    ====================================================== -->
+
+    <section id="birthdaySection" class="screen">
+
+        <div class="birthday-container">
+
+            <div class="birthday-flower">
+                ✿
+            </div>
+
+            <p class="small-title">
+                the secret is unlocked
+            </p>
+
+            <h1 class="birthday-title">
+                Happy<br>
+                Birthday!
+            </h1>
+
+            <p class="birthday-name">
+                to someone very special ♡
+            </p>
+
+            <p class="birthday-message">
+                today is all about you.
+            </p>
+
+            <button id="letterButton" class="main-button">
+                there's more ♡
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         4. BIRTHDAY LETTER
+    ====================================================== -->
+
+    <section id="letterSection" class="content-section">
+
+        <div class="section-inner">
+
+            <p class="section-label">
+                — a little letter —
+            </p>
+
+            <h2 class="section-title">
+                For You,
+            </h2>
+
+
+            <div class="letter-card">
+
+                <p>
+                    happy birthday to youu ♡
+                </p>
+
+                <p>
+                    another year has come, and I hope this
+                    new chapter brings you so many beautiful
+                    things. I hope you get to meet more reasons
+                    to smile, more moments worth remembering,
+                    and more dreams that slowly become real.
+                </p>
+
+                <p>
+                    thank you for all the little moments,
+                    the random conversations, the laughs,
+                    and every memory that somehow became
+                    something special to me.
+                </p>
+
+                <p>
+                    I may not always know the perfect words
+                    to say, but I hope you know that you are
+                    appreciated more than you realize.
+                </p>
+
+                <p>
+                    so today, please enjoy your day.
+                    smile a little more, laugh a little louder,
+                    and make another beautiful memory.
+                </p>
+
+                <p>
+                    here's to another year of you. ♡
+                </p>
+
+                <div class="letter-signature">
+                    with love,<br>
+                    <span>shra</span>
+                </div>
+
+            </div>
+
+
+            <button id="memoriesButton" class="outline-button">
+                see our memories →
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         5. PHOTO MEMORIES
+    ====================================================== -->
+
+    <section id="memoriesSection" class="content-section memories-section">
+
+        <div class="section-inner">
+
+            <p class="section-label">
+                — little moments —
+            </p>
+
+            <h2 class="section-title">
+                Our Memories
+            </h2>
+
+            <p class="section-subtitle">
+                some moments are too special<br>
+                to simply forget.
+            </p>
+
+
+            <!-- PHOTO 1 -->
+
+            <div class="photo-card photo-one">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="images/foto1.jpeg"
+                        alt="Our memory 1"
+                    >
+
+                </div>
+
+                <p class="photo-caption">
+                    one of my favorite moments ♡
+                </p>
+
+            </div>
+
+
+            <!-- PHOTO 2 -->
+
+            <div class="photo-card photo-two">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="images/foto2.jpeg"
+                        alt="Our memory 2"
+                    >
+
+                </div>
+
+                <p class="photo-caption">
+                    a little memory worth keeping
+                </p>
+
+            </div>
+
+
+            <!-- PHOTO 3 -->
+
+            <div class="photo-card photo-three">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="images/foto3.jpeg"
+                        alt="Our memory 3"
+                    >
+
+                </div>
+
+                <p class="photo-caption">
+                    and another one ♡
+                </p>
+
+            </div>
+
+
+            <div class="memory-ending">
+
+                <span>✿</span>
+
+                <p>
+                    three pictures,<br>
+                    countless memories.
+                </p>
+
+                <span>✿</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         6. FINAL
+    ====================================================== -->
+
+    <section id="finalSection" class="content-section final-section">
+
+        <div class="final-content">
+
+            <div class="final-flower">
+                ✿
+            </div>
+
+            <p class="section-label">
+                — one last thing —
+            </p>
+
+            <h2>
+                Keep smiling,
+            </h2>
+
+            <p class="final-message">
+                because the world is a little more beautiful
+                with your smile in it.
+            </p>
+
+            <div class="final-heart">
+                ♡
+            </div>
+
+            <p class="final-signature">
+                made with love by<br>
+                <span>shra</span>
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
